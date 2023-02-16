@@ -6,6 +6,7 @@ import Landing from "./pages/landing/Landing";
 import Contact from "./pages/contact/Contact";
 import Footer from "./components/footer/Footer";
 
+
 const App = () => {
   return (
     <>
