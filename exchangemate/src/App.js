@@ -1,21 +1,24 @@
 import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/header/Header";
+import Landing from "./pages/landing/Landing";
+import Contact from "./pages/contact/Contact";
+import Footer from "./components/footer/Footer";
 
 
-function fetchCurrencies() {
-  fetch(`https://api.polygon.io/v3/reference/tickers?market=fx&active=true&apiKey=VjdfKVQgSP7rYvGkgO1Cu789ZdvAj_ph`)
-  .then(res => res.json())
-  .then(data => {
-      console.log(data);
-  })
-}
-
-
-function App() {
-  fetchCurrencies();
+const App = () => {
   return (
-    <header>Under construction</header>
- 
-  )
-}
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer />
+    </>
+  );
+};
 
 export default App;
+
