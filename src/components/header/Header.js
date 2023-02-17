@@ -9,7 +9,6 @@ function Header() {
         <div className="container nav-container">
           <nav>
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/testpage">Test Page</NavLink>
             <NavLink to="/contact">Contact</NavLink>
           </nav>
         </div>
