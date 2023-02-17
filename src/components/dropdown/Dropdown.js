@@ -1,27 +1,24 @@
 import * as React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 import "./dropdown.css";
 
 
-const Dropdown = () => {
-
-  const [currencyA, setCurrencyA] = useState("USD");
-  const [currencyB, setCurrencyB] = useState("USD");
+const Dropdown = (props) => {
 
 
   const handleFirstCurrency = (event) => {
-    setCurrencyA(event.target.value);
+    props.setCurrencyA(event.target.value);
   };
 
   const handleSecondCurrency = (event) => {
-    setCurrencyB(event.target.value);
+    props.setCurrencyB(event.target.value);
   };
 
   return (
     <div>
       <label>
         First Currency Choice
-        <select value={currencyA} onChange={handleFirstCurrency}>
+        <select value={props.currencyA} onChange={handleFirstCurrency}>
           <option value="USD">United States Dollar</option>
           <option value="GBP">Great British Pound</option>
           <option value="EUR">Euro</option>
@@ -31,7 +28,7 @@ const Dropdown = () => {
       </label>
       <label>
         Second Currency Choice
-        <select value={currencyB} onChange={handleSecondCurrency}>
+        <select value={props.currencyB} onChange={handleSecondCurrency}>
           <option value="USD">United States Dollar</option>
           <option value="GBP">Great British Pound</option>
           <option value="EUR">Euro</option>
@@ -39,11 +36,8 @@ const Dropdown = () => {
           <option value="JPY">Japanese Yen</option>
         </select>
       </label>
-      <p>First Currency {currencyA}!</p>
-      <p>Second Currency {currencyB}!</p>
     </div>
   );
 };
-
 
 export default Dropdown;
