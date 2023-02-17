@@ -2,74 +2,48 @@ import * as React from "react";
 import { useState } from "react";
 import "./dropdown.css";
 
-const Dropdown = ({ label, options, value, onChange }) => {
+
+const Dropdown = () => {
+
+  const [currencyA, setCurrencyA] = useState("USD");
+  const [currencyB, setCurrencyB] = useState("USD");
+
+
+  const handleFirstCurrency = (event) => {
+    setCurrencyA(event.target.value);
+  };
+
+  const handleSecondCurrency = (event) => {
+    setCurrencyB(event.target.value);
+  };
+
   return (
     <div>
       <label>
-        {label}
-        <select value={value} onChange={onChange}>
-          {options.map((option) => (
-            <option key={option.label} value={option.value}>
-              {option.label}
-            </option>
-          ))}
+        First Currency Choice
+        <select value={currencyA} onChange={handleFirstCurrency}>
+          <option value="USD">United States Dollar</option>
+          <option value="GBP">Great British Pound</option>
+          <option value="EUR">Euro</option>
+          <option value="AUD">Australian Dollar</option>
+          <option value="JPY">Japanese Yen</option>
         </select>
       </label>
+      <label>
+        Second Currency Choice
+        <select value={currencyB} onChange={handleSecondCurrency}>
+          <option value="USD">United States Dollar</option>
+          <option value="GBP">Great British Pound</option>
+          <option value="EUR">Euro</option>
+          <option value="AUD">Australian Dollar</option>
+          <option value="JPY">Japanese Yen</option>
+        </select>
+      </label>
+      <p>First Currency {currencyA}!</p>
+      <p>Second Currency {currencyB}!</p>
     </div>
   );
 };
 
+
 export default Dropdown;
-
-// import React from "react";
-// import "./testpage.css";
-
-// import Dropdown from "../../components/dropdown/Dropdown";
-
-// const Testpage = () => {
-//   const [food, setFood] = React.useState("fruit");
-//   const [drink, setDrink] = React.useState("water");
-
-//   const handleFoodChange = (event) => {
-//     setFood(event.target.value);
-//   };
-
-//   const handleDrinkChange = (event) => {
-//     setDrink(event.target.value);
-//   };
-
-//   const foodOptions = [
-//     { label: "Fruit", value: "fruit" },
-//     { label: "Vegetable", value: "vegetable" },
-//     { label: "Meat", value: "meat" },
-//   ];
-
-//   const drinkOptions = [
-//     { label: "Water", value: "water" },
-//     { label: "Beer", value: "beer" },
-//     { label: "Wine", value: "wine" },
-//   ];
-
-//   return (
-//     <div className="selectOptions">
-//       <Dropdown
-//         label="What do we eat?"
-//         options={foodOptions}
-//         value={food}
-//         onChange={handleFoodChange}
-//       />
-
-//       <Dropdown
-//         label="What do we drink?"
-//         options={drinkOptions}
-//         value={drink}
-//         onChange={handleDrinkChange}
-//       />
-
-//       <p>We eat {food}!</p>
-//       <p>We drink {drink}!</p>
-//     </div>
-//   );
-// };
-
-// export default Testpage;
