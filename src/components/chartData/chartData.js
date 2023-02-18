@@ -11,6 +11,8 @@ const ChartedData = (props) => {
 
     const results = props.fetchedData.results;
 
+    // const results = props.data.results;
+
    // const dates = props.dates;
 
     for (let index in results) {

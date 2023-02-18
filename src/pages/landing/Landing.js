@@ -12,6 +12,9 @@ function Landing() {
   const [currencyA, setCurrencyA] = useState("USD");
   const [currencyB, setCurrencyB] = useState("USD");
 
+  //TESTING
+  const [showChart, setShowChart] = useState(false);
+
 
   // Using setFetchedData function from useState to update fetchedData state
   const [fetchedData, setFetchedData] = useState('');
@@ -21,6 +24,8 @@ function Landing() {
     setFetchedData(data);
   }
 
+  // <ChartedData fetchedData={fetchedData}/>
+  
   return (
     <>
       <h1>landing</h1>
@@ -28,8 +33,8 @@ function Landing() {
       <p>Second Currency {currencyB}</p>
       <Dropdown currencyA={currencyA} currencyB={currencyB} setCurrencyA={setCurrencyA} setCurrencyB={setCurrencyB}/>
       <FetchCurrencies />
-      <FetchAgg currencyA={currencyA} currencyB={currencyB} onDataFetch={handleData}/>
-      <ChartedData fetchedData={fetchedData}/>
+      <FetchAgg currencyA={currencyA} currencyB={currencyB} onDataFetch={handleData} showChart={showChart} setShowChart={setShowChart}/>
+      {showChart && <ChartedData showChart={showChart} setShowChart={setShowChart} fetchedData={fetchedData}/>}
     </>
   );
 };
