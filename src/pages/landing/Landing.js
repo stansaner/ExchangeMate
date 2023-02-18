@@ -7,20 +7,20 @@ import FetchAgg from "../../components/fetchagg/fetchAgg";
 import Dropdown from "../../components/dropdown/Dropdown";
 import ChartedData from "../../components/chartData/chartData";
 // Imported moment.js
-import moment from 'moment';
+//import moment from 'moment';
 
 function Landing() {
   const [currencyA, setCurrencyA] = useState("USD");
   const [currencyB, setCurrencyB] = useState("USD");
 
+//TESTING CONVERT UNIX TIMESTAMP
+  // const today = moment();
+  // const dates = [];
 
-  const today = moment();
-  const dates = [];
-
-  for (let day = 7; day >= 0; day--) {
-    const date = moment(today).subtract(day, 'days').format('YYYY-MM-DD');
-    dates.push(date); 
-  }
+  // for (let day = 7; day >= 0; day--) {
+  //   const date = moment(today).subtract(day, 'days').format('YYYY-MM-DD');
+  //   dates.push(date); 
+  // }
 
  // console.log(dates);
 
@@ -40,8 +40,8 @@ function Landing() {
       <p>Second Currency {currencyB}</p>
       <Dropdown currencyA={currencyA} currencyB={currencyB} setCurrencyA={setCurrencyA} setCurrencyB={setCurrencyB}/>
       <FetchCurrencies />
-      <FetchAgg currencyA={currencyA} currencyB={currencyB} dates={dates} onDataFetch={handleData}/>
-      <ChartedData dates={dates} fetchedData={fetchedData}/>
+      <FetchAgg currencyA={currencyA} currencyB={currencyB} onDataFetch={handleData}/>
+      <ChartedData fetchedData={fetchedData}/>
     </>
   );
 };
