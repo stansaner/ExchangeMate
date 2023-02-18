@@ -1,11 +1,13 @@
 import React from "react";
 // UseEffect imported from react not used below
-import { useEffect } from "react";
+import { useState } from "react";
 import "./fetchagg.css";
 import moment from 'moment';
+import ChartedData from "../../components/chartData/chartData";
 
 function FetchAgg(props) {
-  
+
+  const [showChart, setShowChart] = useState(false);
 
   const time = moment();
   const today = moment(time).format('YYYY-MM-DD');
@@ -21,6 +23,8 @@ function FetchAgg(props) {
         props.onDataFetch(data);
 
        // console.log(data); 
+
+       setShowChart(true);
       })
   }
 
@@ -28,6 +32,7 @@ function FetchAgg(props) {
     <div>
       <h1>FetchAgg</h1>
       <button onClick={bringData}>Show rates</button>
+      {showChart && <ChartedData fetchedData={props.onDataFetch}/>}
     </div>
   );
 };

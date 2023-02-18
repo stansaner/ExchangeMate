@@ -12,6 +12,7 @@ function Landing() {
   const [currencyA, setCurrencyA] = useState("USD");
   const [currencyB, setCurrencyB] = useState("USD");
 
+
   // Using setFetchedData function from useState to update fetchedData state
   const [fetchedData, setFetchedData] = useState('');
 
