@@ -6,24 +6,11 @@ import FetchCurrencies from "../../components/fetchCurrencies/fetchCurrencies";
 import FetchAgg from "../../components/fetchagg/fetchAgg";
 import Dropdown from "../../components/dropdown/Dropdown";
 import ChartedData from "../../components/chartData/chartData";
-// Imported moment.js
-//import moment from 'moment';
+
 
 function Landing() {
   const [currencyA, setCurrencyA] = useState("USD");
   const [currencyB, setCurrencyB] = useState("USD");
-
-//TESTING CONVERT UNIX TIMESTAMP
-  // const today = moment();
-  // const dates = [];
-
-  // for (let day = 7; day >= 0; day--) {
-  //   const date = moment(today).subtract(day, 'days').format('YYYY-MM-DD');
-  //   dates.push(date); 
-  // }
-
- // console.log(dates);
-
 
   // Using setFetchedData function from useState to update fetchedData state
   const [fetchedData, setFetchedData] = useState('');

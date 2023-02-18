@@ -6,18 +6,11 @@ import moment from 'moment';
 
 function FetchAgg(props) {
   
-  //Testing props passed
-  //console.log(props.dates);
 
   const time = moment();
   const today = moment(time).format('YYYY-MM-DD');
   const weekAgo = moment(time).subtract(7, 'days').format('YYYY-MM-DD');
   //console.log(weekAgo);
-
-  // for (let day = 7; day >= 0; day--) {
-  //   const date = moment(today).subtract(day, 'days').format('YYYY-MM-DD');
-  //   dates.push(date); 
-  // }
 
   function bringData() {
     fetch(`https://api.polygon.io/v2/aggs/ticker/C:${props.currencyA}${props.currencyB}/range/1/day/${weekAgo}/${today}?adjusted=true&sort=asc&limit=120&apiKey=VjdfKVQgSP7rYvGkgO1Cu789ZdvAj_ph`)
