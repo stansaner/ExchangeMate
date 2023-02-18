@@ -4,8 +4,10 @@ import "./chartData.css";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 
 const ChartedData = (props) => {
+
+    const results = props.fetchedData.results;
     
-    console.log(props.fetchedData);
+    console.log(results);
 
     return (
         <>
