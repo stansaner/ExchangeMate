@@ -7,7 +7,7 @@ import ChartedData from "../../components/chartData/chartData";
 
 function FetchAgg(props) {
 
-  const [showChart, setShowChart] = useState(false);
+ // const [showChart, setShowChart] = useState(false);
 
   const time = moment();
   const today = moment(time).format('YYYY-MM-DD');
@@ -24,15 +24,18 @@ function FetchAgg(props) {
 
        // console.log(data); 
 
-       setShowChart(true)
+       props.setShowChart(true);
+
+       //props.chartStatus(showChart);
+
+       return data;
       })
+
   }
 
   return (
     <div>
-      <h1>FetchAgg</h1>
       <button onClick={bringData}>Show rates</button>
-      {showChart && <ChartedData fetchedData={props.onDataFetch}/>}
     </div>
   );
 };
