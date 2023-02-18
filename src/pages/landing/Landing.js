@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./landing.css";
 
-import FetchCurrencies from "../../components/fetchCurrencies/fetchCurrencies";
+// import FetchCurrencies from "../../components/fetchCurrencies/fetchCurrencies";
 import FetchAgg from "../../components/fetchagg/fetchAgg";
 import Dropdown from "../../components/dropdown/Dropdown";
 import ChartedData from "../../components/chartData/chartData";
@@ -11,8 +11,6 @@ import ChartedData from "../../components/chartData/chartData";
 function Landing() {
   const [currencyA, setCurrencyA] = useState("USD");
   const [currencyB, setCurrencyB] = useState("USD");
-
-  //TESTING
   const [showChart, setShowChart] = useState(false);
 
 
@@ -23,8 +21,6 @@ function Landing() {
   function handleData(data) {
     setFetchedData(data);
   }
-
-  // <ChartedData fetchedData={fetchedData}/>
   
   return (
     <>
@@ -32,7 +28,6 @@ function Landing() {
       <p>First Currency {currencyA}</p>
       <p>Second Currency {currencyB}</p>
       <Dropdown currencyA={currencyA} currencyB={currencyB} setCurrencyA={setCurrencyA} setCurrencyB={setCurrencyB}/>
-      <FetchCurrencies />
       <FetchAgg currencyA={currencyA} currencyB={currencyB} onDataFetch={handleData} showChart={showChart} setShowChart={setShowChart}/>
       {showChart && <ChartedData showChart={showChart} setShowChart={setShowChart} fetchedData={fetchedData}/>}
     </>
