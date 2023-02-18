@@ -65,7 +65,17 @@ function Landing() {
         handleChangeVolume={handleChangeVolume}
       />
       <FetchAgg currencyA={currencyA} currencyB={currencyB} onDataFetch={handleData} showChart={showChart} setShowChart={setShowChart}/>
-      {showChart && <ChartedData showChart={showChart} setShowChart={setShowChart} fetchedData={fetchedData}/>}
+      {showChart && 
+        <ChartedData 
+          showChart={showChart} 
+          setShowChart={setShowChart} 
+          fetchedData={fetchedData}
+          checkedClosing={checkedClosing}
+          checkedHighest={checkedHighest}
+          checkedLowest={checkedLowest}
+          checkedOpen={checkedOpen}
+          checkedVolume={checkedVolume}
+      />}
     </>
   );
 };

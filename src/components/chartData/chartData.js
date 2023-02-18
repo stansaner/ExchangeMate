@@ -46,11 +46,11 @@ const ChartedData = (props) => {
                 <XAxis dataKey="t" domain={['auto', 'auto']} />
                 <YAxis domain={['auto', 'auto']}/>
                 <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
-                <Line type="monotone" dataKey="h" name="Highest price" stroke="#82ca9d" />
-                <Line type="monotone" dataKey="l" name="Lowest price" stroke="#FF7F50" />
-                <Line type="monotone" dataKey="o" name="Open price" stroke="#A9A9A9" />
-                <Line type="monotone" dataKey="c" name="Closing price" stroke="#008080" />
-                <Line type="monotone" dataKey="vw" name="Volume weighted average price" stroke="#00BFFF" />
+                {props.checkedHighest && <Line type="monotone" dataKey="h" name="Highest price" stroke="#82ca9d" />}
+                {props.checkedLowest && <Line type="monotone" dataKey="l" name="Lowest price" stroke="#FF7F50" />}
+                {props.checkedOpen && <Line type="monotone" dataKey="o" name="Open price" stroke="#A9A9A9" />}
+                {props.checkedClosing && <Line type="monotone" dataKey="c" name="Closing price" stroke="#008080" />}
+                {props.checkedVolume && <Line type="monotone" dataKey="vw" name="Volume weighted average price" stroke="#00BFFF" />}
                 <Tooltip />
                 <Legend />
             </LineChart>
