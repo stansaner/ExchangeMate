@@ -24,7 +24,7 @@ function FetchAgg(props) {
 
        // console.log(data); 
 
-       setShowChart(true);
+       setShowChart(true)
       })
   }
 
