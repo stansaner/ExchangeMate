@@ -5,9 +5,17 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 're
 
 const ChartedData = (props) => {
 
-    console.log(props.dates);
+   // console.log(props.dates);
 
     const results = props.fetchedData.results;
+
+    const dates = props.dates;
+
+    for (let index in results) {
+        let currentObj = results[index];
+        currentObj.date = dates[index];
+        //console.log(currentObj);
+    }
     
     console.log(results);
 
