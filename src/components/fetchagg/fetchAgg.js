@@ -1,7 +1,7 @@
 import React from "react";
+// UseEffect imported from react not used below
 import { useEffect } from "react";
 import "./fetchagg.css";
-
 
 function FetchAgg(props) {
 
@@ -13,7 +13,6 @@ function FetchAgg(props) {
       })
   }
 
-
   return (
     <div>
       <h1>FetchAgg</h1>
@@ -21,5 +20,6 @@ function FetchAgg(props) {
     </div>
   );
 };
+
 
 export default FetchAgg;

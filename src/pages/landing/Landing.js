@@ -5,6 +5,7 @@ import "./landing.css";
 import FetchCurrencies from "../../components/fetchCurrencies/fetchCurrencies";
 import FetchAgg from "../../components/fetchagg/fetchAgg";
 import Dropdown from "../../components/dropdown/Dropdown";
+import ChartedData from "../../components/chartData/chartData";
 
 function Landing() {
   const [currencyA, setCurrencyA] = useState("USD");
@@ -18,6 +19,7 @@ function Landing() {
       <Dropdown currencyA={currencyA} currencyB={currencyB} setCurrencyA={setCurrencyA} setCurrencyB={setCurrencyB}/>
       <FetchCurrencies />
       <FetchAgg currencyA={currencyA} currencyB={currencyB}/>
+      <ChartedData />
     </>
   );
 };
