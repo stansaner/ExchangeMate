@@ -9,11 +9,11 @@ function FetchAgg(props) {
 
   const time = moment();
   const today = moment(time).format('YYYY-MM-DD');
-  const weekAgo = moment(time).subtract(7, 'days').format('YYYY-MM-DD');
+  const monthAgo = moment(time).subtract(1, 'month').format('YYYY-MM-DD');
   //console.log(weekAgo);
 
   function bringData() {
-    fetch(`https://api.polygon.io/v2/aggs/ticker/C:${props.currencyA}${props.currencyB}/range/1/day/${weekAgo}/${today}?adjusted=true&sort=asc&limit=120&apiKey=VjdfKVQgSP7rYvGkgO1Cu789ZdvAj_ph`)
+    fetch(`https://api.polygon.io/v2/aggs/ticker/C:${props.currencyA}${props.currencyB}/range/1/day/${monthAgo}/${today}?adjusted=true&sort=asc&limit=120&apiKey=VjdfKVQgSP7rYvGkgO1Cu789ZdvAj_ph`)
     .then(res => res.json())
       .then(data => {
         
