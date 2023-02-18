@@ -10,7 +10,14 @@ import ChartedData from "../../components/chartData/chartData";
 function Landing() {
   const [currencyA, setCurrencyA] = useState("USD");
   const [currencyB, setCurrencyB] = useState("USD");
+  // Using setFetchedData function from useState to update fetchedData state
+  const [fetchedData, setFetchedData] = useState('');
 
+  // handleData function calls setFetchedData and passes it the data object as a property
+  function handleData(data) {
+    setFetchedData(data);
+  }
+  
   return (
     <>
       <h1>landing</h1>
@@ -18,8 +25,8 @@ function Landing() {
       <p>Second Currency {currencyB}</p>
       <Dropdown currencyA={currencyA} currencyB={currencyB} setCurrencyA={setCurrencyA} setCurrencyB={setCurrencyB}/>
       <FetchCurrencies />
-      <FetchAgg currencyA={currencyA} currencyB={currencyB}/>
-      <ChartedData />
+      <FetchAgg currencyA={currencyA} currencyB={currencyB} onDataFetch={handleData} />
+      <ChartedData fetchedData={fetchedData}/>
     </>
   );
 };

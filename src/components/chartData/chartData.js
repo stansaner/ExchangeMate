@@ -3,12 +3,14 @@ import "./chartData.css";
 // Imported Recharts into fetch agg component
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 
+const ChartedData = (props) => {
+    
+    console.log(props.fetchedData);
 
-
-
-const ChartedData = () => {
     return (
-        <h1>Testing Charting Area</h1>
+        <>
+            <h1>Testing charting</h1>
+        </>
     );
 };
 
