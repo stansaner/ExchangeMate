@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import "./fetchagg.css";
 
 function FetchAgg(props) {
+  console.log(props.dates);
 
   function bringData() {
     fetch(`https://api.polygon.io/v2/aggs/ticker/C:${props.currencyA}${props.currencyB}/range/1/day/2023-01-02/2023-01-09?adjusted=true&sort=asc&limit=120&apiKey=VjdfKVQgSP7rYvGkgO1Cu789ZdvAj_ph`)
@@ -12,7 +13,7 @@ function FetchAgg(props) {
         
         // pass the results object as a prop
         props.onDataFetch(data);
-        
+
        // console.log(data); 
       })
   }

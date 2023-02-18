@@ -22,7 +22,7 @@ function Landing() {
     dates.push(date); 
   }
 
-  console.log(dates);
+ // console.log(dates);
 
 
   // Using setFetchedData function from useState to update fetchedData state
@@ -40,8 +40,8 @@ function Landing() {
       <p>Second Currency {currencyB}</p>
       <Dropdown currencyA={currencyA} currencyB={currencyB} setCurrencyA={setCurrencyA} setCurrencyB={setCurrencyB}/>
       <FetchCurrencies />
-      <FetchAgg currencyA={currencyA} currencyB={currencyB} onDataFetch={handleData} />
-      <ChartedData fetchedData={fetchedData}/>
+      <FetchAgg currencyA={currencyA} currencyB={currencyB} dates={dates} onDataFetch={handleData}/>
+      <ChartedData dates={dates} fetchedData={fetchedData}/>
     </>
   );
 };

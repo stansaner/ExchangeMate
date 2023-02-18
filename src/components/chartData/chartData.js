@@ -5,6 +5,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 're
 
 const ChartedData = (props) => {
 
+    console.log(props.dates);
+
     const results = props.fetchedData.results;
     
     console.log(results);
