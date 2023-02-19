@@ -6,10 +6,11 @@
     padding: 7.5rem;
     border: 1px solid transparent;
     border-radius: 15px;
-    margin: 200px;
+    margin: 10%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 }
+
 
 .firstsecond-currency {
     display: flex;
