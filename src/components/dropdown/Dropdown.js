@@ -27,6 +27,8 @@ const Dropdown = (props) => {
                 <option value="EUR">Euro</option>
                 <option value="AUD">Australian Dollar</option>
                 <option value="JPY">Japanese Yen</option>
+                <option value="NZD">New Zealand Dollar</option>
+                <option value="CAD">Canadian Dollar</option>
               </select>
             </div>
           </div>
@@ -45,6 +47,8 @@ const Dropdown = (props) => {
                 <option value="EUR">Euro</option>
                 <option value="AUD">Australian Dollar</option>
                 <option value="JPY">Japanese Yen</option>
+                <option value="NZD">New Zealand Dollar</option>
+                <option value="CAD">Canadian Dollar</option>
               </select>
             </div>
           </div>
