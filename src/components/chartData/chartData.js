@@ -47,21 +47,20 @@ const ChartedData = (props) => {
                 {props.checkedLowest && <Line type="monotone" dataKey="l" name="Lowest price" stroke="#FF7F50" />}
                 {props.checkedOpen && <Line type="monotone" dataKey="o" name="Open price" stroke="#A9A9A9" />}
                 {props.checkedClosing && <Line type="monotone" dataKey="c" name="Closing price" stroke="#008080" />}
-                {props.checkedVolume && <Line type="monotone" dataKey="vw" name="Volume weighted average price" stroke="#00BFFF" />}
                 <Tooltip />
                 <Legend />
             </LineChart>
 
-            <LineChart width={600} height={300} data={results}>
+            {props.checkedVolume && <LineChart width={600} height={300} data={results}>
                 <XAxis dataKey="date" domain={['auto', 'auto']} />
                 <YAxis domain={['auto', 'auto']}/>
                 {/* add gridToggle to stroke */}
                 <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
-                <Line type="monotone" dataKey="v" name="Trading volume" stroke="#none" />
-                <Line type="monotone" dataKey="n" name="Number of transactions" stroke="#none" />
+                <Line type="monotone" dataKey="v" name="Trading volume" stroke="#00BFFF" />
                 <Tooltip />
                 <Legend />
             </LineChart>
+            }
         </>
     );
 };
