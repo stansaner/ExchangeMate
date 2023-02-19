@@ -1,42 +1,106 @@
-import React from "react";
 import { useState } from "react";
 import "./contact.css";
 
-// function Contact() {
-//   return <h1>contact</h1>;
-// }
+const styles = {
+  header: {
+    textAlign: "center",
+    margin: "20px 0",
+  },
 
-const Contact = () => {
-  const [food, setFood] = useState("fruit");
-  const [drink, setDrink] = useState("water");
-  const handleFoodChange = (event) => {
-    setFood(event.target.value);
-  };
-  const handleDrinkChange = (event) => {
-    setDrink(event.target.value);
-  };
-  return (
-    <div>
-      <label>
-        What do we eat?
-        <select value={food} onChange={handleFoodChange}>
-          <option value="fruit">Fruit</option>
-          <option value="vegetable">Vegetable</option>
-          <option value="meat">Meat</option>
-        </select>
-      </label>
-      <label>
-        What do we drink?
-        <select value={drink} onChange={handleDrinkChange}>
-          <option value="water">Water</option>
-          <option value="beer">Beer</option>
-          <option value="wine">Wine</option>
-        </select>
-      </label>
-      <p>We eat {food}!</p>
-      <p>We drink {drink}!</p>
-    </div>
-  );
+  success: {
+    textAlign: "center",
+    color: "lightseagreen",
+    marginTop: "15px",
+  },
 };
+
+function Contact() {
+  const [success, setSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+    access_key: "8442d1a9-4635-4e30-84db-809f51db94e2",
+  });
+
+  const handleChange = (event) => {
+    //console.log(event.target.value);
+
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    //console.log(formData);
+
+    // const formData = new FormData(form);
+    // const object = Object.fromEntries(formData);
+    const data = JSON.stringify(formData);
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: data,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setSuccess(true);
+        setFormData({
+          ...formData,
+          name: "",
+          email: "",
+          message: "",
+        });
+
+        setTimeout(() => {
+          setSuccess(false);
+        }, 3000);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  return (
+    <>
+      <h1 id="contact" style={styles.header}>
+        Contact Me
+      </h1>
+
+      <div className="contact-form">
+        <form onSubmit={handleSubmit}>
+          <input
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            type="text"
+            placeholder="Enter Your Name"
+          />
+          <input
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            type="text"
+            placeholder="Enter Your Email Address"
+          />
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Enter your message..."
+            cols="30"
+            rows="10"
+          ></textarea>
+          <input type="submit" Submit />
+        </form>
+      </div>
+      {success && <p style={styles.success}>Form Submitted Successfully!</p>}
+    </>
+  );
+}
 
 export default Contact;
