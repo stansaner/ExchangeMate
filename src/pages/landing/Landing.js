@@ -48,34 +48,46 @@ function Landing() {
   
   return (
     <>
-      <h1>landing</h1>
-      <p>First Currency {currencyA}</p>
-      <p>Second Currency {currencyB}</p>
-      <Dropdown currencyA={currencyA} currencyB={currencyB} setCurrencyA={setCurrencyA} setCurrencyB={setCurrencyB}/>
-      <Checkboxes 
-        checkedClosing={checkedClosing}
-        handleChangeClosing={handleChangeClosing}
-        checkedHighest={checkedHighest}
-        handleChangeHighest={handleChangeHighest}
-        checkedLowest={checkedLowest}
-        handleChangeLowest={handleChangeLowest}
-        checkedOpen={checkedOpen}
-        handleChangeOpen={handleChangeOpen}
-        checkedVolume={checkedVolume}
-        handleChangeVolume={handleChangeVolume}
-      />
-      <FetchAgg currencyA={currencyA} currencyB={currencyB} onDataFetch={handleData} showChart={showChart} setShowChart={setShowChart}/>
-      {showChart && 
-        <ChartedData 
-          showChart={showChart} 
-          setShowChart={setShowChart} 
-          fetchedData={fetchedData}
+      <div class="landing-container">
+        <h1 class="test">Select your currencies below</h1>
+        
+        {/* First and second currency text  */}
+
+        <div className="firstsecond-currency">
+          <p>From: {currencyA}</p>
+          <p>To: {currencyB}</p>
+        </div>
+
+      {/* Dropdown starts here  */}
+
+        <Dropdown currencyA={currencyA} currencyB={currencyB} setCurrencyA={setCurrencyA} setCurrencyB={setCurrencyB}/>
+
+      {/* Checkboxes start here */}
+        <Checkboxes
           checkedClosing={checkedClosing}
+          handleChangeClosing={handleChangeClosing}
           checkedHighest={checkedHighest}
+          handleChangeHighest={handleChangeHighest}
           checkedLowest={checkedLowest}
+          handleChangeLowest={handleChangeLowest}
           checkedOpen={checkedOpen}
+          handleChangeOpen={handleChangeOpen}
           checkedVolume={checkedVolume}
-      />}
+          handleChangeVolume={handleChangeVolume}
+        />
+        <FetchAgg currencyA={currencyA} currencyB={currencyB} onDataFetch={handleData} showChart={showChart} setShowChart={setShowChart}/>
+        {showChart &&
+          <ChartedData
+            showChart={showChart}
+            setShowChart={setShowChart}
+            fetchedData={fetchedData}
+            checkedClosing={checkedClosing}
+            checkedHighest={checkedHighest}
+            checkedLowest={checkedLowest}
+            checkedOpen={checkedOpen}
+            checkedVolume={checkedVolume}
+            />}
+        </div>
     </>
   );
 };

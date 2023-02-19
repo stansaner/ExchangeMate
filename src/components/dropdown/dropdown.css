@@ -1,1 +1,22 @@
+#currency-checker {
+    display: flex;
+    gap: rem;
+    margin-bottom: 15px;
+}
 
+.search-categories {
+    margin: 20px;
+}
+
+.search-categories p {
+    text-align: center;
+}
+
+.dropdown-style {
+    font-size: 15px;
+    padding: 15px 12px 15px 14px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    position: relative;
+}

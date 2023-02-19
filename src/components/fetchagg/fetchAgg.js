@@ -32,8 +32,8 @@ function FetchAgg(props) {
   }
 
   return (
-    <div>
-      <button onClick={bringData}>Show rates</button>
+    <div className="showrates-style">
+      <button className="showrates-button" onClick={bringData}>Show rates</button>
     </div>
   );
 };

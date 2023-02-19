@@ -16,26 +16,40 @@ const Dropdown = (props) => {
 
   return (
     <div id="currency-checker">
-      <label>
-        First Currency Choice
-        <select value={props.currencyA} onChange={handleFirstCurrency}>
-          <option value="USD">United States Dollar</option>
-          <option value="GBP">Great British Pound</option>
-          <option value="EUR">Euro</option>
-          <option value="AUD">Australian Dollar</option>
-          <option value="JPY">Japanese Yen</option>
-        </select>
-      </label>
-      <label>
-        Second Currency Choice
-        <select value={props.currencyB} onChange={handleSecondCurrency}>
-          <option value="USD">United States Dollar</option>
-          <option value="GBP">Great British Pound</option>
-          <option value="EUR">Euro</option>
-          <option value="AUD">Australian Dollar</option>
-          <option value="JPY">Japanese Yen</option>
-        </select>
-      </label>
+      <div className="currencyflex-item">
+        <label>
+          <div className="search-categories">
+          <p>First Currency</p>
+            <div className="select">
+              <select className="dropdown-style" value={props.currencyA} onChange={handleFirstCurrency}>
+                <option value="USD">United States Dollar</option>
+                <option value="GBP">Great British Pound</option>
+                <option value="EUR">Euro</option>
+                <option value="AUD">Australian Dollar</option>
+                <option value="JPY">Japanese Yen</option>
+              </select>
+            </div>
+          </div>
+        </label>
+      </div>
+
+      <div className="currencyflex-item">
+        <label> 
+          
+          <div className="search-categories">
+          <p>Second Currency</p>
+            <div className="select">
+              <select className="dropdown-style" value={props.currencyB} onChange={handleSecondCurrency}>
+                <option value="USD">United States Dollar</option>
+                <option value="GBP">Great British Pound</option>
+                <option value="EUR">Euro</option>
+                <option value="AUD">Australian Dollar</option>
+                <option value="JPY">Japanese Yen</option>
+              </select>
+            </div>
+          </div>
+        </label>
+      </div>
     </div>
   );
 };
