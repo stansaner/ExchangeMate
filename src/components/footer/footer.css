@@ -1,0 +1,36 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.footer-style {
+    position: relative;
+    display: flex;
+    padding: 0px 0px 5px 10px;
+    background-color: #023047;
+}
+.footer-style p{
+    font-size: 15px;
+    color: #fff;
+}
+
+.footer-style li {
+    list-style: none;
+    color: #fff;
+}
+
+.wave-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background: url('../../images/wave-footer.svg') repeat-x;
+    background-size: cover;
+}

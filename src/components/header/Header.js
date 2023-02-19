@@ -43,7 +43,7 @@ function Header() {
             
             <h1>Welcome to  eXchangeMate</h1>
             <p>Money talks, and we're listening - compare the top currency exchange rates, all in one place.</p>
-            <button class="currency-button"><a href="">Compare now</a></button>
+            <button class="currency-button"><a href="#currency-checker">Compare now</a></button>
           </div>
           <div className="flex-item image-style">
           {/* <FontAwesomeIcon icon={faCoins} size="8x" /> */}

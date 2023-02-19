@@ -15,7 +15,7 @@ const Dropdown = (props) => {
   };
 
   return (
-    <div>
+    <div id="currency-checker">
       <label>
         First Currency Choice
         <select value={props.currencyA} onChange={handleFirstCurrency}>
