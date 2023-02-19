@@ -20,37 +20,45 @@ const ChartedData = (props) => {
 
         let currentUnixMsec = currentObj.t;
 
-        //console.log(currentUnixMsec)
+        console.log(currentUnixMsec)
 
         let date = moment(currentUnixMsec).format('DD/MM/YY');
 
         //console.log(date);
 
-        currentObj.t = date;
+        currentObj.date = date;
 
         //console.log(currentObj)
         //currentObj.date = dates[index];
         //console.log(currentObj);
     }
     
-    console.log(results);
-
-    //Other lines - they distort the line graph when added in so I have put them here for now
-    // <Line type="monotone" dataKey="v" name="Trading volume" stroke="#none" />
-    // <Line type="monotone" dataKey="n" name="Number of transactions" stroke="#none" />
+    //console.log(results);
 
     return (
         <>
-        <h3>Results</h3>
+        <h3>Results:</h3>
             <LineChart width={600} height={300} data={results}>
-                <XAxis dataKey="t" domain={['auto', 'auto']} />
+                <XAxis dataKey="date" domain={['auto', 'auto']} />
                 <YAxis domain={['auto', 'auto']}/>
+                {/* add gridToggle to stroke */}
                 <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
                 {props.checkedHighest && <Line type="monotone" dataKey="h" name="Highest price" stroke="#82ca9d" />}
                 {props.checkedLowest && <Line type="monotone" dataKey="l" name="Lowest price" stroke="#FF7F50" />}
                 {props.checkedOpen && <Line type="monotone" dataKey="o" name="Open price" stroke="#A9A9A9" />}
                 {props.checkedClosing && <Line type="monotone" dataKey="c" name="Closing price" stroke="#008080" />}
                 {props.checkedVolume && <Line type="monotone" dataKey="vw" name="Volume weighted average price" stroke="#00BFFF" />}
+                <Tooltip />
+                <Legend />
+            </LineChart>
+
+            <LineChart width={600} height={300} data={results}>
+                <XAxis dataKey="date" domain={['auto', 'auto']} />
+                <YAxis domain={['auto', 'auto']}/>
+                {/* add gridToggle to stroke */}
+                <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+                <Line type="monotone" dataKey="v" name="Trading volume" stroke="#none" />
+                <Line type="monotone" dataKey="n" name="Number of transactions" stroke="#none" />
                 <Tooltip />
                 <Legend />
             </LineChart>
