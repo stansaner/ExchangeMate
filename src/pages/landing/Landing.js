@@ -4,10 +4,10 @@ import "./landing.css";
 
 // import FetchCurrencies from "../../components/fetchCurrencies/fetchCurrencies";
 import FetchAgg from "../../components/fetchagg/fetchAgg";
+import Hero from "../../components/hero/hero";
 import Dropdown from "../../components/dropdown/Dropdown";
-import Checkboxes from "../../components/checkboxes/checkboxes"
+import Checkboxes from "../../components/checkboxes/checkboxes";
 import ChartedData from "../../components/chartData/chartData";
-
 
 function Landing() {
   const [currencyA, setCurrencyA] = useState("USD");
@@ -39,18 +39,19 @@ function Landing() {
   };
 
   // Using setFetchedData function from useState to update fetchedData state
-  const [fetchedData, setFetchedData] = useState('');
+  const [fetchedData, setFetchedData] = useState("");
 
   // handleData function calls setFetchedData and passes it the data object as a property
   function handleData(data) {
     setFetchedData(data);
   }
-  
+
   return (
     <>
-      <div className="landing-container">
+      <Hero />
+      <div className="landing-container" id="currency-checker">
         <h1 className="test">Select your currencies below</h1>
-        
+
         {/* First and second currency text  */}
 
         <div className="firstsecond-currency">
@@ -58,11 +59,16 @@ function Landing() {
           <p>To: {currencyB}</p>
         </div>
 
-      {/* Dropdown starts here  */}
+        {/* Dropdown starts here  */}
 
-        <Dropdown currencyA={currencyA} currencyB={currencyB} setCurrencyA={setCurrencyA} setCurrencyB={setCurrencyB}/>
+        <Dropdown
+          currencyA={currencyA}
+          currencyB={currencyB}
+          setCurrencyA={setCurrencyA}
+          setCurrencyB={setCurrencyB}
+        />
 
-      {/* Checkboxes start here */}
+        {/* Checkboxes start here */}
         <Checkboxes
           checkedClosing={checkedClosing}
           handleChangeClosing={handleChangeClosing}
@@ -75,8 +81,14 @@ function Landing() {
           checkedVolume={checkedVolume}
           handleChangeVolume={handleChangeVolume}
         />
-        <FetchAgg currencyA={currencyA} currencyB={currencyB} onDataFetch={handleData} showChart={showChart} setShowChart={setShowChart}/>
-        {showChart &&
+        <FetchAgg
+          currencyA={currencyA}
+          currencyB={currencyB}
+          onDataFetch={handleData}
+          showChart={showChart}
+          setShowChart={setShowChart}
+        />
+        {showChart && (
           <ChartedData
             showChart={showChart}
             setShowChart={setShowChart}
@@ -86,10 +98,11 @@ function Landing() {
             checkedLowest={checkedLowest}
             checkedOpen={checkedOpen}
             checkedVolume={checkedVolume}
-            />}
-        </div>
+          />
+        )}
+      </div>
     </>
   );
-};
+}
 
 export default Landing;
