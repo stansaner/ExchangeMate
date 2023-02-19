@@ -3,3 +3,22 @@ section.agg-row {
   flex-direction: row;
   gap:20px;
 }
+
+.showrates-style{
+  padding: 5px;
+}
+
+.showrates-button {
+  padding: 15px 25px;
+  font-size: 17px;
+  background-color: #219EBC;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 400ms;
+}
+
+.showrates-button:hover{ 
+  background-color: #1a85a0;
+}
