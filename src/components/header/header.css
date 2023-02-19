@@ -1,6 +1,5 @@
-header {
+/* nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: #000;
   padding: 30px 3%;
@@ -18,3 +17,47 @@ nav a:not(:last-child) {
 nav a.active {
   text-decoration: underline;
 }
+
+nav-style {
+  color: blue;
+} */
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8ECAE6;
+  color: #ffffff;
+  padding: 10px 20px;
+}
+
+/* Style for the logo and title */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: #023047;
+  text-decoration: none;
+  gap: 0.5rem;
+}
+
+/* Style for X in exchange */
+
+.nav-highlight {
+  color: #219EBC;
+}
+
+/* Style for the links */
+.navbar-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar-links a {
+  color: #023047;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* Style for the active link */
