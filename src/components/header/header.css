@@ -126,6 +126,7 @@ a:hover {
   bottom: 0;
   left: 0;
   width: 100%;
+  margin-top: -2px;
   height: 320px;
   background: url('../../images/wave.svg') no-repeat;
 }
