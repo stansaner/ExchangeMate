@@ -1,0 +1,69 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Styles for header */
+
+header h1 {
+  font-size: 60px;
+  margin-bottom: -3px;
+}
+
+header p {
+  font-size: 20px;
+}
+
+.flex-container {
+  display: flex;
+  padding: 7.5rem;
+  color: #ffffff;
+  background-color: #023047;
+}
+
+.flex-item {
+  flex: 1;
+}
+
+.header-style {
+  margin-top: 50px;
+  margin-bottom: -40px;
+}
+
+.image-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.currency-button {
+  padding: 0.6rem;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  font-size: 17px;
+  margin-top: 8px;
+  background: #023047;
+  cursor: pointer;
+  transition: all 400ms;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.currency-button:hover {
+  background-color: #fff;
+  color: #023047;
+}
+
+a:hover {
+  color: #023047;
+}
+
+.wave {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 320px;
+  background: url("../../images/wave.svg") no-repeat;
+}
