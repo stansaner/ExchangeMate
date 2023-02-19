@@ -23,14 +23,14 @@ function Header() {
         </ul>
       </nav>
       <header></header> */}
-      <nav class="navbar">
-        <a class="navbar-brand" href="#">
+      <nav className="navbar">
+        <a className="navbar-brand" href="#">
           <FontAwesomeIcon icon={faCoins} size="2x" />
           <h1>
-            e<span class="nav-highlight">X</span>changeMate
+            e<span className="nav-highlight">X</span>changeMate
           </h1>
         </a>
-        <div class="navbar-links">
+        <div className="navbar-links">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/contact">Contact us</NavLink>
         </div>
@@ -43,7 +43,7 @@ function Header() {
             
             <h1>Welcome to  eXchangeMate</h1>
             <p>Money talks, and we're listening - compare the top currency exchange rates, all in one place.</p>
-            <button class="currency-button"><a href="#currency-checker">Compare now</a></button>
+            <button className="currency-button"><a href="#currency-checker">Compare now</a></button>
           </div>
           <div className="flex-item image-style">
           {/* <FontAwesomeIcon icon={faCoins} size="8x" /> */}

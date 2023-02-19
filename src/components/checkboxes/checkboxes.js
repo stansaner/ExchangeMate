@@ -36,13 +36,13 @@ function Checkboxes(props) {
           onChange={props.handleChangeLowest}
         />
       </div>
-      <checkitem>
+      <div className="checkitem">
         <Checkbox
           label="Opening Price"
           value={props.checkedOpen}
           onChange={props.handleChangeOpen}
         />
-      </checkitem>
+      </div>
       <div className="checkitem">
         <Checkbox
           label="Trading Volume"

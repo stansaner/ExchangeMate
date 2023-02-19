@@ -6,6 +6,7 @@ import moment from "moment";
 //import ChartedData from "../../components/chartData/chartData";
 
 function FetchAgg(props) {
+  // NEXT STEPS  possibly user cam change start and end date
   const time = moment();
   const today = moment(time).format("YYYY-MM-DD");
   const monthAgo = moment(time).subtract(1, "month").format("YYYY-MM-DD");

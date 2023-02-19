@@ -4,9 +4,9 @@ import "./footer.css";
 function Footer() {
   return (
     <>
-      <footer class="footer-flex">
+      <footer className="footer-flex">
         <footer>
-          <div class="wave-footer"></div>
+          <div className="wave-footer"></div>
           <div className="footer-style">
             <p>© 2023 eXchangeMate</p>
           </div>

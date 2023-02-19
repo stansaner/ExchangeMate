@@ -48,8 +48,8 @@ function Landing() {
   
   return (
     <>
-      <div class="landing-container">
-        <h1 class="test">Select your currencies below</h1>
+      <div className="landing-container">
+        <h1 className="test">Select your currencies below</h1>
         
         {/* First and second currency text  */}
 
