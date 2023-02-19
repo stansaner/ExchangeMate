@@ -37,8 +37,8 @@ const ChartedData = (props) => {
 
     return (
         <>
-        <h3>Results:</h3>
-            <div className="chartParent">
+            <h3>Results:</h3>
+            {(props.checkedHighest || props.checkedLowest || props.checkedOpen || props.checkedClosing) && <div className="chartParent">
                 <ResponsiveContainer width='100%' height='100%'>
                 <LineChart width={600} height={300} data={results}>
                     <XAxis dataKey="date" domain={['auto', 'auto']} />
@@ -54,23 +54,22 @@ const ChartedData = (props) => {
                 </LineChart>
                 </ResponsiveContainer>
                 </div>
+            }       
 
-                {props.checkedVolume && <div className="chartParent">
-                    <ResponsiveContainer width='100%' height='100%'>
-                        <LineChart width={600} height={300} data={results}>
-                        <XAxis dataKey="date" domain={['auto', 'auto']} />
-                        <YAxis domain={['auto', 'auto']}/>
-                        {/* add gridToggle to stroke */}
-                        <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
-                        <Line type="monotone" dataKey="v" name="Trading volume" stroke="#00BFFF" />
-                        <Tooltip />
-                        <Legend />
-                        </LineChart>
-                    </ResponsiveContainer>
-                </div>
-                }
-
-
+            {props.checkedVolume && <div className="chartParent">
+                <ResponsiveContainer width='100%' height='100%'>
+                    <LineChart width={600} height={300} data={results}>
+                    <XAxis dataKey="date" domain={['auto', 'auto']} />
+                    <YAxis domain={['auto', 'auto']}/>
+                    {/* add gridToggle to stroke */}
+                    <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+                    <Line type="monotone" dataKey="v" name="Trading volume" stroke="#00BFFF" />
+                    <Tooltip />
+                    <Legend />
+                    </LineChart>
+                </ResponsiveContainer>
+            </div>
+            }
 
         </>
     );
