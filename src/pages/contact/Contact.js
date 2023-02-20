@@ -67,9 +67,12 @@ function Contact() {
 
   return (
     <>
-      <h1 id="contact" style={styles.header}>
-        Contact Me
-      </h1>
+      <div className="contact-header">
+          
+        <h1 id="contact" style={styles.header}>
+          Contact Us
+        </h1>
+      </div>
 
       <div className="contact-form">
         <form onSubmit={handleSubmit}>
