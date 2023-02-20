@@ -68,38 +68,42 @@ function Contact() {
   return (
     <>
       <div className="contact-header">
-          
         <h1 id="contact" style={styles.header}>
           Contact Us
         </h1>
       </div>
+        <div className="wave-container">
+          <div className="contact-wave"></div>
+        </div>
 
-      <div className="contact-form">
-        <form onSubmit={handleSubmit}>
-          <input
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            type="text"
-            placeholder="Enter Your Name"
-          />
-          <input
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            type="text"
-            placeholder="Enter Your Email Address"
-          />
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Enter your message..."
-            cols="30"
-            rows="10"
-          ></textarea>
-          <input type="submit" Submit />
-        </form>
+      <div className="contact-styling">
+        <div className="contact-form">
+          <form onSubmit={handleSubmit}>
+            <input
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              type="text"
+              placeholder="Enter Your Name"
+            />
+            <input
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              type="text"
+              placeholder="Enter Your Email Address"
+            />
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Enter your message..."
+              cols="30"
+              rows="10"
+            ></textarea>
+            <input type="submit" Submit />
+          </form>
+        </div>
       </div>
       {success && <p style={styles.success}>Form Submitted Successfully!</p>}
     </>
