@@ -10,6 +10,14 @@ import Checkboxes from "../../components/checkboxes/checkboxes";
 import ChartedData from "../../components/chartData/chartData";
 
 function Landing() {
+
+  //Set up useState as an object
+  const [currencyObj, setCurrencyObj] = useState({
+    currencyA: '',
+    currencyB: ''
+  });
+
+  //Set up useState as an object
   const [currencyA, setCurrencyA] = useState("");
   const [currencyB, setCurrencyB] = useState("");
   const [showChart, setShowChart] = useState(false);
@@ -55,17 +63,25 @@ function Landing() {
         {/* First and second currency text  */}
 
         <div className="firstsecond-currency">
-          <p>From: {currencyA}</p>
-          <p>To: {currencyB}</p>
+           {/* REFACTOR */}
+          {/* <p>From: {currencyA}</p>
+          <p>To: {currencyB}</p> */}
+          <p>From: {currencyObj.currencyA}</p>
+          <p>To: {currencyObj.currencyB}</p>
         </div>
 
         {/* Dropdown starts here  */}
 
+        {/* REFACTOR */}
         <Dropdown
-          currencyA={currencyA}
-          currencyB={currencyB}
-          setCurrencyA={setCurrencyA}
-          setCurrencyB={setCurrencyB}
+          // currencyA={currencyA}
+          // currencyB={currencyB}
+          // setCurrencyA={setCurrencyA}
+          // setCurrencyB={setCurrencyB}
+          currencyObj= {currencyObj}
+          setCurrencyObj={setCurrencyObj}
+          // setCurrencyB={setCurrencyObj({...currencyObj, currencyB: {curr} })}
+          // setCurrencyB={setCurrencyObj}
         />
 
         {/* Checkboxes start here */}
@@ -81,9 +97,12 @@ function Landing() {
           checkedVolume={checkedVolume}
           handleChangeVolume={handleChangeVolume}
         />
+
+        {/* REFACTOR */}
+        
         <FetchAgg
-          currencyA={currencyA}
-          currencyB={currencyB}
+          currencyA={currencyObj.currencyA}
+          currencyB={currencyObj.currencyB}
           onDataFetch={handleData}
           showChart={showChart}
           setShowChart={setShowChart}
