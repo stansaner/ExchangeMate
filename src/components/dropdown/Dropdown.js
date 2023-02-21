@@ -6,10 +6,12 @@ import "./dropdown.css";
 const Dropdown = (props) => {
 
   const handleFirstCurrency = (event) => {
+    //REFACTOR
     props.setCurrencyA(event.target.value);
   };
 
   const handleSecondCurrency = (event) => {
+    //REFACTOR
     props.setCurrencyB(event.target.value);
   };
 
@@ -20,6 +22,7 @@ const Dropdown = (props) => {
           <div className="search-categories">
           <p>First Currency</p>
             <div className="select">
+            {/* REFACTOR */}
               <select className="dropdown-style" value={props.currencyA} onChange={handleFirstCurrency}>
                 <option value="">Please select a currency</option>
                 <option value="USD">United States Dollar</option>
@@ -41,6 +44,7 @@ const Dropdown = (props) => {
           <div className="search-categories">
           <p>Second Currency</p>
             <div className="select">
+               {/* REFACTOR */}
               <select className="dropdown-style" value={props.currencyB} onChange={handleSecondCurrency}>
               <option value="">Please select a currency</option>
                 <option value="USD">United States Dollar</option>

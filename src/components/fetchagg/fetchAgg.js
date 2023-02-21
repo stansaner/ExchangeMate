@@ -55,6 +55,8 @@ function FetchAgg(props) {
 
   function bringData() {
 
+    {/* REFACTOR */}
+
     if(props.currencyA && props.currencyB) {
       fetch(
         `https://api.polygon.io/v2/aggs/ticker/C:${props.currencyA}${props.currencyB}/range/1/day/${from}/${today}?adjusted=true&sort=asc&limit=120&apiKey=VjdfKVQgSP7rYvGkgO1Cu789ZdvAj_ph`

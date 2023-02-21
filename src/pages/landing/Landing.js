@@ -10,6 +10,8 @@ import Checkboxes from "../../components/checkboxes/checkboxes";
 import ChartedData from "../../components/chartData/chartData";
 
 function Landing() {
+
+  //Set up useState as an object
   const [currencyA, setCurrencyA] = useState("");
   const [currencyB, setCurrencyB] = useState("");
   const [showChart, setShowChart] = useState(false);
@@ -55,12 +57,14 @@ function Landing() {
         {/* First and second currency text  */}
 
         <div className="firstsecond-currency">
+           {/* REFACTOR */}
           <p>From: {currencyA}</p>
           <p>To: {currencyB}</p>
         </div>
 
         {/* Dropdown starts here  */}
 
+        {/* REFACTOR */}
         <Dropdown
           currencyA={currencyA}
           currencyB={currencyB}
@@ -81,6 +85,9 @@ function Landing() {
           checkedVolume={checkedVolume}
           handleChangeVolume={handleChangeVolume}
         />
+
+        {/* REFACTOR */}
+        
         <FetchAgg
           currencyA={currencyA}
           currencyB={currencyB}
