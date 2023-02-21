@@ -10,8 +10,8 @@ import Checkboxes from "../../components/checkboxes/checkboxes";
 import ChartedData from "../../components/chartData/chartData";
 
 function Landing() {
-  const [currencyA, setCurrencyA] = useState("USD");
-  const [currencyB, setCurrencyB] = useState("USD");
+  const [currencyA, setCurrencyA] = useState("");
+  const [currencyB, setCurrencyB] = useState("");
   const [showChart, setShowChart] = useState(false);
 
   // Using state variables for the checkboxes choice of data to display in the graphs
@@ -39,7 +39,7 @@ function Landing() {
   };
 
   // Using setFetchedData function from useState to update fetchedData state
-  const [fetchedData, setFetchedData] = useState("");
+  const [fetchedData, setFetchedData] = useState(" ");
 
   // handleData function calls setFetchedData and passes it the data object as a property
   function handleData(data) {
