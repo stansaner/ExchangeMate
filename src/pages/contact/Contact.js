@@ -67,8 +67,9 @@ function Contact() {
 
   return (
     <>
+      <div className="wave"></div>
       <h1 id="contact" style={styles.header}>
-        Contact Me
+        Contact Us
       </h1>
 
       <div className="contact-form">
@@ -95,7 +96,9 @@ function Contact() {
             cols="30"
             rows="10"
           ></textarea>
-          <input type="submit" Submit />
+          <div className="contact-button-container">
+            <input type="submit" Submit />
+          </div>
         </form>
       </div>
       {success && <p style={styles.success}>Form Submitted Successfully!</p>}
