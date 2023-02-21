@@ -7,12 +7,29 @@ const Dropdown = (props) => {
 
   const handleFirstCurrency = (event) => {
     //REFACTOR
-    props.setCurrencyA(event.target.value);
+
+    // props.setCurrencyA(event.target.value);
+
+    let currA = event.target.value;
+
+    // console.log(currA)
+
+    //Spread operator to modify one property from the currencyObj i.e., currencyA
+    props.setCurrencyObj({...props.currencyObj, currencyA: event.target.value});
   };
 
   const handleSecondCurrency = (event) => {
     //REFACTOR
-    props.setCurrencyB(event.target.value);
+
+    // props.setCurrencyB(event.target.value);
+
+    let currB = event.target.value;
+
+    // console.log(currB)
+
+    //Spread operator to modify one property from the currencyObj i.e., currencyA
+    props.setCurrencyObj({...props.currencyObj, currencyB: currB});
+
   };
 
   return (
@@ -23,7 +40,7 @@ const Dropdown = (props) => {
           <p>First Currency</p>
             <div className="select">
             {/* REFACTOR */}
-              <select className="dropdown-style" value={props.currencyA} onChange={handleFirstCurrency}>
+              <select className="dropdown-style" value={props.currencyObj.currencyA} onChange={handleFirstCurrency}>
                 <option value="">Please select a currency</option>
                 <option value="USD">United States Dollar</option>
                 <option value="GBP">Great British Pound</option>
@@ -45,7 +62,7 @@ const Dropdown = (props) => {
           <p>Second Currency</p>
             <div className="select">
                {/* REFACTOR */}
-              <select className="dropdown-style" value={props.currencyB} onChange={handleSecondCurrency}>
+              <select className="dropdown-style" value={props.currencyObj.currencyB} onChange={handleSecondCurrency}>
               <option value="">Please select a currency</option>
                 <option value="USD">United States Dollar</option>
                 <option value="GBP">Great British Pound</option>
