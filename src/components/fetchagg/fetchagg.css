@@ -1,11 +1,52 @@
 section.agg-row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap:20px;
 }
 
+
+.text-center {
+  text-align: center;
+}
+
+/* Time span button  */
+
+#tickmarks-input {
+  width: 300px;
+  appearance: none;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #ddd;
+  outline: none;
+}
+
+#tickmarks-input::-webkit-slider-thumb {
+  /* -webkit-appearance: none; */
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #023047;
+  cursor: pointer;
+}
+
+#tickmarks-input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  cursor: pointer;
+}
+
+
+/* Show rates button */
+
 .showrates-style{
   padding: 5px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .showrates-button {

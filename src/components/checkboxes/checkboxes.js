@@ -4,8 +4,8 @@ import "./checkboxes.css"
 //import Checkbox from 'path/to/Checkbox'; // import Checkbox component
 const Checkbox = ({ label, value, onChange }) => {
   return (
-    <label>
-      <input type="checkbox" checked={value} onChange={onChange} />
+    <label className="container">
+      <input className="checkboxes" type="checkbox" checked={value} onChange={onChange} />
       {label}
     </label>
   );
