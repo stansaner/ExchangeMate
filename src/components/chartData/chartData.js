@@ -37,8 +37,8 @@ const ChartedData = (props) => {
 
     return (
         <>
-            <h3>Results:</h3>
             {(props.checkedHighest || props.checkedLowest || props.checkedOpen || props.checkedClosing) && <div className="chartParent">
+            <h3>Results:</h3>
                 <ResponsiveContainer width='100%' height='100%'>
                 <LineChart width={600} height={300} data={results}>
                     <XAxis dataKey="date" domain={['auto', 'auto']} />

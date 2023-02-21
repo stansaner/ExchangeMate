@@ -5,7 +5,7 @@ import "./fetchagg.css";
 import moment from "moment";
 //import ChartedData from "../../components/chartData/chartData";
 
-const rangeValues = ["week", "month", "threeMonths", "sixMonths", "year"];
+const rangeValues = ["Week", "Month", "3 months", "6 months", "Year"];
 
 function FetchAgg(props) {
   // Time variables to be used by the slider or radio buttons
@@ -25,24 +25,7 @@ function FetchAgg(props) {
     const index = parseInt(event.target.value);
     setRange(index);
 
-    console.log(index);
-
-    // if (index === 0) {
-    //   from = weekAgo;
-    //   console.log(from);
-    // } else if (index === 1) {
-    //   from = monthAgo;
-    //   console.log(from);
-    // } else if (index === 2) {
-    //   from = threeMonthsAgo;
-    //   console.log(from);
-    // } else if (index === 3) {
-    //   from = sixMonthsAgo;
-    //   console.log(from);
-    // } else if (index === 4) {
-    //   from = yearAgo;
-    //   console.log(from);
-    // }
+    //console.log(index);
 
     switch (index) {
       case 0:
@@ -71,22 +54,31 @@ function FetchAgg(props) {
   //console.log(weekAgo);
 
   function bringData() {
-    fetch(
-      `https://api.polygon.io/v2/aggs/ticker/C:${props.currencyA}${props.currencyB}/range/1/day/${from}/${today}?adjusted=true&sort=asc&limit=120&apiKey=VjdfKVQgSP7rYvGkgO1Cu789ZdvAj_ph`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        // pass the results object as a prop
-        props.onDataFetch(data);
-        // console.log(data);
-        props.setShowChart(true);
-        //props.chartStatus(showChart);
-        return data;
-      });
+
+    if(props.currencyA && props.currencyB) {
+      fetch(
+        `https://api.polygon.io/v2/aggs/ticker/C:${props.currencyA}${props.currencyB}/range/1/day/${from}/${today}?adjusted=true&sort=asc&limit=120&apiKey=VjdfKVQgSP7rYvGkgO1Cu789ZdvAj_ph`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          // pass the results object as a prop
+          props.onDataFetch(data);
+          // console.log(data);
+          props.setShowChart(true);
+          //props.chartStatus(showChart);
+          return data;
+        });
+    } else {
+
+      // add to some text to prompt user to select some currencies
+      alert('Please select two currencies');
+    }
+
   }
+
   return (
     <div className="showrates-style">
-      <p>TESTING VALUE: {rangeValues[range]}</p>
+      <p>Time span: {rangeValues[range]}</p>
       <input
         id="tickmarks-input"
         type="range"
@@ -98,11 +90,11 @@ function FetchAgg(props) {
         list="tickmarks"
       />
       <datalist id="tickmarks">
-        <option value="0" data-period="week" label="1 week" />
-        <option value="1" data-period="month" label="1 month" />
-        <option value="2" data-period="threeMonths" label="3 months" />
-        <option value="3" data-period="sixMonths" label="6 months" />
-        <option value="4" data-period="year" label="1 year" />
+        <option value="0" data-period="Week" label="1 week" />
+        <option value="1" data-period="Month" label="1 month" />
+        <option value="2" data-period="3 months" label="3 months" />
+        <option value="3" data-period="6 months" label="6 months" />
+        <option value="4" data-period="Year" label="1 year" />
       </datalist>
 
       <button className="showrates-button" onClick={bringData}>
