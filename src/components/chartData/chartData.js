@@ -1,9 +1,10 @@
 import React from "react";
-import "./chartData.css";
+import { useState } from "react";
 // Imported moment.js
 import moment from 'moment';
 // Imported Recharts into fetch agg component
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
+import "./chartData.css";
 
 const ChartedData = (props) => {
 
@@ -35,8 +36,33 @@ const ChartedData = (props) => {
     
     //console.log(results);
 
+    // const for toggle grid lines
+
+    const [grid, setGrid] = useState(false);
+
+    const [gridStyling, setGridStyling] = useState('#eee');
+
+    const [gridBtnText, setGridBtnText] = useState("grid off");
+
+    //Button toggle grid lines
+    function toggleGrid() {
+
+        setGrid(!grid);
+
+        if (grid) {
+            setGridBtnText("grid off");
+            setGridStyling('#ccc');
+        } else {
+            setGridBtnText("grid on");
+            setGridStyling('none');
+        };
+    }
+
+
     return (
         <>
+           {(props.checkedHighest || props.checkedLowest || props.checkedOpen || props.checkedClosing || props.checkedVolume) &&  <button className="grid-toggle-button" onClick={toggleGrid}>{gridBtnText}</button>}
+
             {(props.checkedHighest || props.checkedLowest || props.checkedOpen || props.checkedClosing) && <div className="chartParent">
             <h3>Results:</h3>
                 <ResponsiveContainer width='100%' height='100%'>
@@ -44,7 +70,7 @@ const ChartedData = (props) => {
                     <XAxis dataKey="date" domain={['auto', 'auto']} />
                     <YAxis domain={['auto', 'auto']}/>
                     {/* add gridToggle to stroke */}
-                    <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+                    <CartesianGrid stroke={gridStyling} strokeDasharray="5 5" />
                     {props.checkedHighest && <Line type="monotone" dataKey="h" name="Highest price" stroke="#82ca9d" />}
                     {props.checkedLowest && <Line type="monotone" dataKey="l" name="Lowest price" stroke="#FF7F50" />}
                     {props.checkedOpen && <Line type="monotone" dataKey="o" name="Open price" stroke="#A9A9A9" />}
@@ -62,7 +88,7 @@ const ChartedData = (props) => {
                     <XAxis dataKey="date" domain={['auto', 'auto']} />
                     <YAxis domain={['auto', 'auto']}/>
                     {/* add gridToggle to stroke */}
-                    <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+                    <CartesianGrid stroke={gridStyling} strokeDasharray="5 5" />
                     <Line type="monotone" dataKey="v" name="Trading volume" stroke="#00BFFF" />
                     <Tooltip />
                     <Legend />
