@@ -77,30 +77,34 @@ function FetchAgg(props) {
   }
 
   return (
-    <div className="showrates-style">
-      <p>Time span: {rangeValues[range]}</p>
-      <input
-        id="tickmarks-input"
-        type="range"
-        min="0"
-        max="4"
-        step="1"
-        value={range}
-        onChange={handleDateSlider}
-        list="tickmarks"
-      />
-      <datalist id="tickmarks">
-        <option value="0" data-period="Week" label="1 week" />
-        <option value="1" data-period="Month" label="1 month" />
-        <option value="2" data-period="3 months" label="3 months" />
-        <option value="3" data-period="6 months" label="6 months" />
-        <option value="4" data-period="Year" label="1 year" />
-      </datalist>
+      <div>
+        <div className="separation">
+          <p class="text-center">Time span: {rangeValues[range]}</p>
+          <input
+            id="tickmarks-input"
+            type="range"
+            min="0"
+            max="4"
+            step="1"
+            value={range}
+            onChange={handleDateSlider}
+            list="tickmarks"
+          />
+          <datalist id="tickmarks">
+            <option value="0" data-period="Week" label="1 week" />
+            <option value="1" data-period="Month" label="1 month" />
+            <option value="2" data-period="3 months" label="3 months" />
+            <option value="3" data-period="6 months" label="6 months" />
+            <option value="4" data-period="Year" label="1 year" />
+          </datalist>
+        </div>
 
-      <button className="showrates-button" onClick={bringData}>
-        Show rates
-      </button>
-    </div>
+        <div className="showrates-style">
+          <button className="showrates-button" onClick={bringData}>
+            Show rates
+          </button>
+        </div>
+      </div>
   );
 }
 export default FetchAgg;
