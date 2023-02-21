@@ -5,7 +5,6 @@ import "./dropdown.css";
 
 const Dropdown = (props) => {
 
-
   const handleFirstCurrency = (event) => {
     props.setCurrencyA(event.target.value);
   };
