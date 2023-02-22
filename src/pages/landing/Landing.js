@@ -60,7 +60,7 @@ function Landing() {
   };
 
   // Using setFetchedData function from useState to update fetchedData state
-  const [fetchedData, setFetchedData] = useState(" ");
+  const [fetchedData, setFetchedData] = useState("");
 
   // handleData function calls setFetchedData and passes it the data object as a property
   function handleData(data) {
