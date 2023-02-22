@@ -18,32 +18,45 @@ function Landing() {
   });
 
   //Set up useState as an object
-  const [currencyA, setCurrencyA] = useState("");
-  const [currencyB, setCurrencyB] = useState("");
+  // const [currencyA, setCurrencyA] = useState("");
+  // const [currencyB, setCurrencyB] = useState("");
   const [showChart, setShowChart] = useState(false);
 
   // Using state variables for the checkboxes choice of data to display in the graphs
+  // const [checkedClosing, setCheckedClosing] = useState(false);
+  // const [checkedHighest, setCheckedHighest] = useState(false);
+  // const [checkedLowest, setCheckedLowest] = useState(false);
+  // const [checkedOpen, setCheckedOpen] = useState(false);
+  // const [checkedVolume, setCheckedVolume] = useState(false);
 
-  const [checkedClosing, setCheckedClosing] = useState(false);
-  const [checkedHighest, setCheckedHighest] = useState(false);
-  const [checkedLowest, setCheckedLowest] = useState(false);
-  const [checkedOpen, setCheckedOpen] = useState(false);
-  const [checkedVolume, setCheckedVolume] = useState(false);
+    //Set up useState as an object
+    const [checkboxVars, setCheckboxVars] = useState({
+      checkedClosing: false,
+      checkedHighest: false,
+      checkedLowest: false,
+      checkedOpen: false,
+      checkedVolume: false
+    });
 
   const handleChangeClosing = () => {
-    setCheckedClosing(!checkedClosing);
+    let toggleC = !checkboxVars.checkedClosing;
+    setCheckboxVars({...checkboxVars, checkedClosing: toggleC});
   };
   const handleChangeHighest = () => {
-    setCheckedHighest(!checkedHighest);
+    let toggleH = !checkboxVars.checkedHighest;
+    setCheckboxVars({...checkboxVars, checkedHighest: toggleH});
   };
   const handleChangeLowest = () => {
-    setCheckedLowest(!checkedLowest);
+    let toggleL = !checkboxVars.checkedLowest;
+    setCheckboxVars({...checkboxVars, checkedLowest: toggleL});
   };
   const handleChangeOpen = () => {
-    setCheckedOpen(!checkedOpen);
+    let toggleO = !checkboxVars.checkedOpen;
+    setCheckboxVars({...checkboxVars, checkedOpen: toggleO});
   };
   const handleChangeVolume = () => {
-    setCheckedVolume(!checkedVolume);
+    let toggleV = !checkboxVars.checkedVolume;
+    setCheckboxVars({...checkboxVars, checkedVolume: toggleV});
   };
 
   // Using setFetchedData function from useState to update fetchedData state
@@ -86,16 +99,17 @@ function Landing() {
 
         {/* Checkboxes start here */}
         <Checkboxes
-          checkedClosing={checkedClosing}
+          // checkedClosing={checkedClosing}
           handleChangeClosing={handleChangeClosing}
-          checkedHighest={checkedHighest}
+          // checkedHighest={checkedHighest}
           handleChangeHighest={handleChangeHighest}
-          checkedLowest={checkedLowest}
+          // checkedLowest={checkedLowest}
           handleChangeLowest={handleChangeLowest}
-          checkedOpen={checkedOpen}
+          // checkedOpen={checkedOpen}
           handleChangeOpen={handleChangeOpen}
-          checkedVolume={checkedVolume}
+          // checkedVolume={checkedVolume}
           handleChangeVolume={handleChangeVolume}
+          checkboxVars={checkboxVars}
         />
 
         {/* REFACTOR */}
@@ -112,11 +126,12 @@ function Landing() {
             showChart={showChart}
             setShowChart={setShowChart}
             fetchedData={fetchedData}
-            checkedClosing={checkedClosing}
-            checkedHighest={checkedHighest}
-            checkedLowest={checkedLowest}
-            checkedOpen={checkedOpen}
-            checkedVolume={checkedVolume}
+            // checkedClosing={checkedClosing}
+            // checkedHighest={checkedHighest}
+            // checkedLowest={checkedLowest}
+            // checkedOpen={checkedOpen}
+            // checkedVolume={checkedVolume}
+            checkboxVars={checkboxVars}
           />
         )}
       </div>

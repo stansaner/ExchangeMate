@@ -61,9 +61,9 @@ const ChartedData = (props) => {
 
     return (
         <>
-           {(props.checkedHighest || props.checkedLowest || props.checkedOpen || props.checkedClosing || props.checkedVolume) &&  <button className="grid-toggle-button grid-style" onClick={toggleGrid}>{gridBtnText}</button>}
+           {(props.checkedHighest || props.checkedLowest || props.checkedOpen || props.checkedClosing || props.checkedVolume) &&  <button className="grid-toggle-button" onClick={toggleGrid}>{gridBtnText}</button>}
 
-            {(props.checkedHighest || props.checkedLowest || props.checkedOpen || props.checkedClosing) && <div className="chartParent">
+            {(props.checkboxVars.checkedHighest || props.checkboxVars.checkedLowest || props.checkboxVars.checkedOpen || props.checkboxVars.checkedClosing) && <div className="chartParent">
             <h3>Results:</h3>
                 <ResponsiveContainer width='100%' height='100%'>
                 <LineChart width={600} height={300} data={results}>
@@ -71,10 +71,10 @@ const ChartedData = (props) => {
                     <YAxis domain={['auto', 'auto']}/>
                     {/* add gridToggle to stroke */}
                     <CartesianGrid stroke={gridStyling} strokeDasharray="5 5" />
-                    {props.checkedHighest && <Line type="monotone" dataKey="h" name="Highest price" stroke="#82ca9d" />}
-                    {props.checkedLowest && <Line type="monotone" dataKey="l" name="Lowest price" stroke="#FF7F50" />}
-                    {props.checkedOpen && <Line type="monotone" dataKey="o" name="Open price" stroke="#A9A9A9" />}
-                    {props.checkedClosing && <Line type="monotone" dataKey="c" name="Closing price" stroke="#008080" />}
+                    {props.checkboxVars.checkedHighest && <Line type="monotone" dataKey="h" name="Highest price" stroke="#82ca9d" />}
+                    {props.checkboxVars.checkedLowest && <Line type="monotone" dataKey="l" name="Lowest price" stroke="#FF7F50" />}
+                    {props.checkboxVars.checkedOpen && <Line type="monotone" dataKey="o" name="Open price" stroke="#A9A9A9" />}
+                    {props.checkboxVars.checkedClosing && <Line type="monotone" dataKey="c" name="Closing price" stroke="#008080" />}
                     <Tooltip />
                     <Legend />
                 </LineChart>
@@ -82,7 +82,7 @@ const ChartedData = (props) => {
                 </div>
             }       
 
-            {props.checkedVolume && <div className="chartParent">
+            {props.checkboxVars.checkedVolume && <div className="chartParent">
                 <ResponsiveContainer width='100%' height='100%'>
                     <LineChart width={600} height={300} data={results}>
                     <XAxis dataKey="date" domain={['auto', 'auto']} />

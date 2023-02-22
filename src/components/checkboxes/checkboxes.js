@@ -18,35 +18,35 @@ function Checkboxes(props) {
       <div className="checkitem">
         <Checkbox
           label="Closing Price"
-          value={props.checkedClosing}
+          value={props.checkboxVars.checkedClosing}
           onChange={props.handleChangeClosing}
         />
       </div>
       <div className="checkitem">
         <Checkbox
           label="Highest Price"
-          value={props.checkedHighest}
+          value={props.checkboxVars.checkedHighest}
           onChange={props.handleChangeHighest}
         />
       </div>
       <div className="checkitem">
         <Checkbox
           label="Lowest Price"
-          value={props.checkedLowest}
+          value={props.checkboxVars.checkedLowest}
           onChange={props.handleChangeLowest}
         />
       </div>
       <div className="checkitem">
         <Checkbox
           label="Opening Price"
-          value={props.checkedOpen}
+          value={props.checkboxVars.checkedOpen}
           onChange={props.handleChangeOpen}
         />
       </div>
       <div className="checkitem">
         <Checkbox
           label="Trading Volume"
-          value={props.checkedVolume}
+          value={props.checkboxVars.checkedVolume}
           onChange={props.handleChangeVolume}
         />
       </div>
