@@ -8,8 +8,12 @@ import Hero from "../../components/hero/hero";
 import Dropdown from "../../components/dropdown/Dropdown";
 import Checkboxes from "../../components/checkboxes/checkboxes";
 import ChartedData from "../../components/chartData/chartData";
+import Modal from "../../components/modal/modal";
 
 function Landing() {
+
+  //modal state
+  const [showModal, setShowModal] = useState(false);
 
   //Set up useState as an object
   const [currencyObj, setCurrencyObj] = useState({
@@ -120,6 +124,7 @@ function Landing() {
           onDataFetch={handleData}
           showChart={showChart}
           setShowChart={setShowChart}
+          setShowModal={setShowModal}
         />
         {showChart && (
           <ChartedData
@@ -135,6 +140,7 @@ function Landing() {
           />
         )}
       </div>
+      <Modal showModal={showModal} setShowModal={setShowModal}/>
     </>
   );
 }
