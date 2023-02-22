@@ -22,7 +22,7 @@ function Header() {
       </nav>
       <header></header> */}
       <nav className="navbar">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           <FontAwesomeIcon icon={faCoins} size="2x" />
           <h1>
             e<span className="nav-highlight">X</span>changeMate
