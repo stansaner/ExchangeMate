@@ -1,5 +1,21 @@
 .chartParent {
-    margin: 0 10vh 10vh 10vh;
+    margin: 10vh 10vh 10vh 10vh;
     width: 70vw;
     height: 300px;
+
+}
+
+.grid-style {
+    margin-top: 15px;
+    padding: 5px 9px;
+    border-radius: 8px;
+    border: 1px solid #a8a8a8;
+    transition: all 250ms;
+
+}
+
+.grid-style:hover {
+    cursor: pointer;
+    border: 1px solid #8b8b8b;
+    background-color: #e0dddd;
 }
