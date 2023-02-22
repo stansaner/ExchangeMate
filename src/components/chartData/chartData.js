@@ -61,7 +61,7 @@ const ChartedData = (props) => {
 
     return (
         <>
-           {(props.checkedHighest || props.checkedLowest || props.checkedOpen || props.checkedClosing || props.checkedVolume) &&  <button className="grid-toggle-button" onClick={toggleGrid}>{gridBtnText}</button>}
+           {(props.checkboxVars.checkedHighest || props.checkboxVars.checkedLowest || props.checkboxVars.checkedOpen || props.checkboxVars.checkedClosing || props.checkboxVars.checkedVolume) &&  <button className="grid-toggle-button grid-style" onClick={toggleGrid}>{gridBtnText}</button>}
 
             {(props.checkboxVars.checkedHighest || props.checkboxVars.checkedLowest || props.checkboxVars.checkedOpen || props.checkboxVars.checkedClosing) && <div className="chartParent">
             <h3>Results:</h3>
