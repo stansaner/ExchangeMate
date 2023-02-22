@@ -5,14 +5,21 @@
 
 }
 
+
+/* .gridbutton-container {
+    display: flex;
+} */
+
 .grid-style {
     margin-top: 15px;
     padding: 5px 9px;
     border-radius: 8px;
     border: 1px solid #a8a8a8;
     transition: all 250ms;
+    
 
 }
+
 
 .grid-style:hover {
     cursor: pointer;
