@@ -39,9 +39,9 @@ const Dropdown = (props) => {
 
     const selectCurrencyArr = [['USD', 'United States Dollar'], ['GBP', 'Great British Pound'], ['EUR', 'Euro'], ['AUD', 'Australian Dollar'], ['JPY', 'Japanese Yen'], ['NZD', 'New Zealand Dollar'], ['CAD', 'Canadian Dollar']];
 
-    const selectOptionsA = [];
+    let selectOptionsA = [];
 
-    const selectOptionsB = [];
+    let selectOptionsB = [];
 
     for (var i in selectCurrencyArr) {
 
