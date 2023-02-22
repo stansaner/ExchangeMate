@@ -10,8 +10,6 @@ const Dropdown = (props) => {
 
     // props.setCurrencyA(event.target.value);
 
-    let currA = event.target.value;
-
     // console.log(currA)
 
     //Spread operator to modify one property from the currencyObj i.e., currencyA
@@ -23,14 +21,45 @@ const Dropdown = (props) => {
 
     // props.setCurrencyB(event.target.value);
 
-    let currB = event.target.value;
-
     // console.log(currB)
 
     //Spread operator to modify one property from the currencyObj i.e., currencyA
-    props.setCurrencyObj({...props.currencyObj, currencyB: currB});
+    props.setCurrencyObj({...props.currencyObj, currencyB: event.target.value});
 
   };
+
+  const currA = props.currencyObj.currencyA
+
+  const currB = props.currencyObj.currencyB
+
+
+  // function to create options in dropdown menu
+
+  const printSelectOptions = () => {
+
+    const selectCurrencyArr = [['USD', 'United States Dollar'], ['GBP', 'Great British Pound'], ['EUR', 'Euro'], ['AUD', 'Australian Dollar'], ['JPY', 'Japanese Yen'], ['NZD', 'New Zealand Dollar'], ['CAD', 'Canadian Dollar']];
+
+    const selectOptionsA = [];
+
+    const selectOptionsB = [];
+
+    for (var i in selectCurrencyArr) {
+
+      let item = selectCurrencyArr[i];
+
+      const isSameA = selectCurrencyArr[i][0] == currA;
+
+      const isSameB = selectCurrencyArr[i][0] == currB;
+      
+      if (!isSameB)selectOptionsA.push(<option value={item[0]}>{item[1]}</option>);
+
+      if (!isSameA) selectOptionsB.push(<option value={item[0]}>{item[1]}</option>);
+    }
+
+    return [selectOptionsA, selectOptionsB];
+
+  }
+
 
   return (
     <div id="currency-checker">
@@ -40,15 +69,20 @@ const Dropdown = (props) => {
           <p>First Currency</p>
             <div className="select">
             {/* REFACTOR */}
-              <select className="dropdown-style" value={props.currencyObj.currencyA} onChange={handleFirstCurrency}>
+              <select className="dropdown-style" value={currA} onChange={handleFirstCurrency}>
                 <option value="">Please select a currency</option>
-                <option value="USD">United States Dollar</option>
+                {/* <option value="USD">United States Dollar</option>
                 <option value="GBP">Great British Pound</option>
                 <option value="EUR">Euro</option>
                 <option value="AUD">Australian Dollar</option>
                 <option value="JPY">Japanese Yen</option>
                 <option value="NZD">New Zealand Dollar</option>
-                <option value="CAD">Canadian Dollar</option>
+                <option value="CAD">Canadian Dollar</option> */}
+
+               { 
+               printSelectOptions()[0]
+               }
+
               </select>
             </div>
           </div>
@@ -62,15 +96,29 @@ const Dropdown = (props) => {
           <p>Second Currency</p>
             <div className="select">
                {/* REFACTOR */}
-              <select className="dropdown-style" value={props.currencyObj.currencyB} onChange={handleSecondCurrency}>
+              <select className="dropdown-style" value={currB} onChange={handleSecondCurrency}>
               <option value="">Please select a currency</option>
+               {/* <option value="">Please select a currency</option>
                 <option value="USD">United States Dollar</option>
                 <option value="GBP">Great British Pound</option>
                 <option value="EUR">Euro</option>
                 <option value="AUD">Australian Dollar</option>
                 <option value="JPY">Japanese Yen</option>
                 <option value="NZD">New Zealand Dollar</option>
-                <option value="CAD">Canadian Dollar</option>
+                <option value="CAD">Canadian Dollar</option> */}
+
+                {/* logic so currency only appears if not selected as the first currency */}
+                {/* {(currA !== 'USD') && <option value="USD">United States Dollar</option>}
+                {(currA !== 'GBP') && <option value="GBP">Great British Pound</option>}
+                {(currA !== 'EUR') && <option value="EUR">Euro</option>}
+                {(currA !== 'AUD') && <option value="AUD">Australian Dollar</option>}
+                {(currA !== 'JPY') && <option value="JPY">Japanese Yen</option>}
+                {(currA !== 'NZD') && <option value="NZD">New Zealand Dollar</option>}
+                {(currA !== 'CAD') && <option value="CAD">Canadian Dollar</option>} */}
+
+                { 
+               printSelectOptions()[1]
+                }
               </select>
             </div>
           </div>
