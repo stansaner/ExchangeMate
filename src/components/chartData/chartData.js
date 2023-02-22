@@ -97,6 +97,8 @@ const ChartedData = (props) => {
             </div>
             }
 
+            <button className="grid-style" onClick={toggleGrid}>{gridBtnText}</button>
+
         </>
     );
 };
