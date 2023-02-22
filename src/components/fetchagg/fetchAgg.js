@@ -30,23 +30,23 @@ function FetchAgg(props) {
     switch (index) {
       case 0:
         setFrom(weekAgo);
-        console.log(from);
+        // console.log(from);
         break;
       case 1:
         setFrom(monthAgo);
-        console.log(from);
+        // console.log(from);
         break;
       case 2:
         setFrom(threeMonthsAgo);
-        console.log(from);
+        // console.log(from);
         break;
       case 3:
         setFrom(sixMonthsAgo);
-        console.log(from);
+        // console.log(from);
         break;
       case 4:
         setFrom(yearAgo);
-        console.log(from);
+        // console.log(from);
         break;
     }
   };
@@ -81,7 +81,7 @@ function FetchAgg(props) {
   return (
       <div>
         <div className="separation">
-          <p class="text-center">Time span: {rangeValues[range]}</p>
+          <p className="text-center">Time span: {rangeValues[range]}</p>
           <input
             id="tickmarks-input"
             type="range"
