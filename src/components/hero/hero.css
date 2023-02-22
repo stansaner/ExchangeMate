@@ -61,6 +61,7 @@ a:hover {
 
 .wave {
   position: relative;
+  margin-top: -3px;
   bottom: 0;
   left: 0;
   width: 100%;
