@@ -48,14 +48,15 @@ function FetchAgg(props) {
         setFrom(yearAgo);
         // console.log(from);
         break;
+      default:
+        setFrom(weekAgo);
+        break;
     }
   };
 
   //console.log(weekAgo);
 
   function bringData() {
-
-    {/* REFACTOR */}
 
     if(props.currencyA && props.currencyB) {
       fetch(

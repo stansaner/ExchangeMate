@@ -47,9 +47,9 @@ const Dropdown = (props) => {
 
       let item = selectCurrencyArr[i];
 
-      const isSameA = selectCurrencyArr[i][0] == currA;
+      const isSameA = selectCurrencyArr[i][0] === currA;
 
-      const isSameB = selectCurrencyArr[i][0] == currB;
+      const isSameB = selectCurrencyArr[i][0] === currB;
       
       if (!isSameB)selectOptionsA.push(<option key={item[0]} value={item[0]}>{item[1]}</option>);
 
