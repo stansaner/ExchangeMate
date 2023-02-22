@@ -73,7 +73,8 @@ function FetchAgg(props) {
     } else {
 
       // add to some text to prompt user to select some currencies
-      alert('Please select two currencies');
+      // alert('Please select two currencies');
+      props.setShowModal(true);
     }
 
   }
