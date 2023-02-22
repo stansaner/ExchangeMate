@@ -21,7 +21,7 @@ const ChartedData = (props) => {
 
         let currentUnixMsec = currentObj.t;
 
-        console.log(currentUnixMsec)
+        // console.log(currentUnixMsec)
 
         let date = moment(currentUnixMsec).format('DD/MM/YY');
 
