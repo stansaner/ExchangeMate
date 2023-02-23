@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./contact.css";
 
+
+
 const styles = {
   header: {
     textAlign: "center",
@@ -67,7 +69,7 @@ function Contact() {
 
   return (
     <>
-      <div className="wave"></div>
+      <div className="wave-contact"></div>
       <h1 id="contact" style={styles.header}>
         Contact Us
       </h1>
