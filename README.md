@@ -26,13 +26,15 @@ It integrates 5 variables related to a chosen foreign exchange pair of currencie
 
 ## Installation
 
-There are no special installation instructions. Please just go the URL of the deployed application.
+There are no special installation instructions. Please just go the [URL of the deployed application](https://exchangemate.netlify.app/).
 
 ## Screenshot
 
 ![ExchangeMate screenshot](src/images/exchangemate-screenshot.jpg)
 
 ## Usage
+
+You can use the application on [this link](https://exchangemate.netlify.app/).
 
 Select the pair of currencies from the dropdown boxes in order to obtain the data.
 
