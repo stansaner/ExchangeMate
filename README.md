@@ -15,7 +15,6 @@ It integrates 5 variables related to a chosen foreign exchange pair of currencie
 - the lowest price on the day
 - the trading volume
 
-
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
@@ -29,6 +28,9 @@ It integrates 5 variables related to a chosen foreign exchange pair of currencie
 
 There are no special installation instructions. Please just go the URL of the deployed application.
 
+## Screenshot
+
+![ExchangeMate screenshot](src/images/exchangemate-screenshot.jpg)
 
 ## Usage
 
