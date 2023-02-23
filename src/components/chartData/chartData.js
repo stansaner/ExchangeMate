@@ -97,9 +97,9 @@ const ChartedData = (props) => {
             </div>
             }
 
-            <div className="gridbutton-container">
+            {(props.checkboxVars.checkedHighest || props.checkboxVars.checkedLowest || props.checkboxVars.checkedOpen || props.checkboxVars.checkedClosing || props.checkboxVars.checkedVolume) && <div className="gridbutton-container">
                 <button className="grid-style" onClick={toggleGrid}>{gridBtnText}</button>
-            </div>
+            </div>}
 
         </>
     );
