@@ -63,8 +63,9 @@ const ChartedData = (props) => {
         <>
            {/* {(props.checkboxVars.checkedHighest || props.checkboxVars.checkedLowest || props.checkboxVars.checkedOpen || props.checkboxVars.checkedClosing || props.checkboxVars.checkedVolume) &&  <button className="grid-toggle-button grid-style" onClick={toggleGrid}>{gridBtnText}</button>} */}
 
+           <h3>Results:</h3>
+           
             {(props.checkboxVars.checkedHighest || props.checkboxVars.checkedLowest || props.checkboxVars.checkedOpen || props.checkboxVars.checkedClosing) && <div className="chartParent">
-            <h3>Results:</h3>
                 <ResponsiveContainer width='100%' height='100%'>
                 <LineChart width={600} height={300} data={results}>
                     <XAxis dataKey="date" domain={['auto', 'auto']} />
@@ -97,9 +98,9 @@ const ChartedData = (props) => {
             </div>
             }
 
-            <div className="gridbutton-container">
+            {(props.checkboxVars.checkedHighest || props.checkboxVars.checkedLowest || props.checkboxVars.checkedOpen || props.checkboxVars.checkedClosing || props.checkboxVars.checkedVolume) && <div className="gridbutton-container">
                 <button className="grid-style" onClick={toggleGrid}>{gridBtnText}</button>
-            </div>
+            </div>}
 
         </>
     );
